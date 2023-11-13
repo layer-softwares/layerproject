@@ -1,4 +1,4 @@
-# layer-test
+# Layer
  This is a testing directory for Project layer
 
  Layer is a new programming language designed to be fast and the most powerful programming language.
