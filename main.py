@@ -23,7 +23,7 @@ Layer working and execution architecture,
             5. Code execution (new)
             but it is done in a different way than other programming languages.
         When layer code passes the first 3 steps and reaches the 4th step,
-        the layer engine generates something we call it as 'super prompt' based on layer code..
+        the layer engine generates something we call it as 'super prompt' based on layer code.
         The super prompt is a new type of LLM prompt which can only be understood by the layer LLM.
             The layer LLM what we call it 'Assembly fusion' is a new type of LLM which is trained only on,
                 Assembly language, X86, X86_64, ARM architectures. It is trained to understand the super prompts
