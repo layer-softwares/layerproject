@@ -1,5 +1,5 @@
 # Layer
- This is a testing directory for Project layer
+ This is a working directory for Project layer
 
  Layer is a new programming language designed to be fast and the most powerful programming language.
  What makes layer different from other programming languages is that it is completly new, different
