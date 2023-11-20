@@ -34,28 +34,46 @@ Layer working and execution architecture,
         Layer code -> Layer engine -> Super prompt -> Layer LLM -> ASM code -> Layer engine -> Code execution
 
 """
-import sys
-from engine.lexer.lexer import Lexer
-from engine.tokeniser.tokeniser import Tokenizer
-from engine.parser.parser import Parser
-from engine.enginecode import Interpreter
-
-
+# import sys
+# from engine.lexer.lexer import Lexer
+# from engine.tokeniser.tokeniser import Tokenizer
+# from engine.parser.parser import Parser
+# from engine.enginecode import Interpreter
+from regex_exp import regexexp
+from tools import coder
 # Test the tokenizer and lexer
-if __name__ == '__main__':
-    sourceCode = open("/Users/ajay/projectlayer/ly/zero.ly").read()
-    tokenizer = Tokenizer()
-    tok_stream = tokenizer.tokenize(sourceCode)
-    lexer = Lexer(tok_stream)
-    lexed_tokens = lexer.lex()
-    print(lexed_tokens)
+# if __name__ == '__main__':
+#     sourceCode = open("/Users/ajay/projectlayer/ly/zero.ly").read()
+#     tokenizer = Tokenizer()
+#     tok_stream = tokenizer.tokenize(sourceCode)
+#     lexer = Lexer(tok_stream)
+#     lexed_tokens = lexer.lex()
+#     print(lexed_tokens)
 
-    # Test the parser
-    parser = Parser(lexed_tokens)
-    ast = parser.parse()
-    print(ast)
+#     # Test the parser
+#     parser = Parser(lexed_tokens)
+#     ast = parser.parse()
+#     print(ast)
 
-    # Test the interpreter
-    interpreter = Interpreter(ast)
-    interpreter.interpret()
-    print(interpreter.variables)
+#     # Test the interpreter
+#     interpreter = Interpreter(ast)
+#     interpreter.interpret()
+#     print(interpreter.variables)
+
+if __name__ == "__main__":
+
+
+    import sys
+    import curses
+
+    curses.wrapper(coder.main)
+
+    filename = "./tools/output.py"
+    if filename == "-c":
+        src = sys.argv[2]
+    else:
+        src = open(filename).read()
+    # print(to_text(tokenize(src)))
+    for tkn in regexexp.tokenize(src, filename=filename):
+        print(tkn)
+        
